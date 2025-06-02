@@ -57,7 +57,7 @@ export default function Header() {
           บทความ
         </Link>
         <Link
-          href="/aboutus"
+          href="/"
           rel="noopener noreferrer"
           className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
         >

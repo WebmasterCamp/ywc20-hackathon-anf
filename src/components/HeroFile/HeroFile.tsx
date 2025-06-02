@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function HeroFileLife() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 pt-28 pb-56 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <motion.div
           className="mx-auto mt-16 lg:mt-0"
           initial={{ opacity: 0, x: 20 }}
@@ -16,8 +16,8 @@ export default function HeroFileLife() {
             <img
               src="/image/file.png"
               alt="File"
-              width={600}
-              height={600}
+              width={400}
+
               // className="w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10"
             />
           </div>

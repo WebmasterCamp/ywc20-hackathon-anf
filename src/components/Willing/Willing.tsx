@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function HeroWilling() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-28 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="mt-10 text-2xl font-bold tracking-tight text-foreground sm:text-5xl"
@@ -49,9 +49,7 @@ export default function HeroWilling() {
             <img
               src="image/willing.png"
               alt="Willing"
-              width={600}
-              height={600}
-              // className="w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10"
+              width={400}
             />
           </div>
         </motion.div>
