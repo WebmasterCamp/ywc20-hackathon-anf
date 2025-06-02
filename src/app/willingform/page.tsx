@@ -17,7 +17,6 @@ const WillingForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [selected, setSelected] = useState<string>("");
-  const emailRef = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState<string>("");
 
@@ -92,27 +91,19 @@ const WillingForm = () => {
                   <input
                     type="text"
                     placeholder="ชื่อ-นามสกุล"
+                    defaultValue="ปาย สุขี"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   <input
                     type="text"
                     placeholder="ชื่อเล่น"
+                    defaultValue="ปาย"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   <input
-                    type="email"
+                    // type="email"
                     placeholder="อีเมล"
-                    defaultValue={email}
-                    ref={emailRef}
-                    onBlur={() => {
-                      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-                      const inputValue = emailRef.current?.value || "";
-                      if (inputValue && !emailPattern.test(inputValue)) {
-                        setEmailError("กรุณากรอกอีเมลให้ถูกต้อง เช่น ไทย@example.com");
-                      } else {
-                        setEmailError("");
-                      }
-                    }}
+                    defaultValue={"paii@จรรโลง.ไทย"}
                     className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
                       emailError ? "border-red-500" : ""
                     }`}
@@ -123,6 +114,7 @@ const WillingForm = () => {
                   <input
                     type="date"
                     placeholder="วันเกิด"
+                    defaultValue="1995-12-30"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
@@ -133,12 +125,14 @@ const WillingForm = () => {
                 <div className="space-y-4">
                   <textarea
                     placeholder="โรคประจำตัว"
+                    defaultValue="เบาหวาน, ความดัน"
                     rows={3}
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   <input
                     type="text"
                     placeholder="โรงพยาบาลที่ใช้ประจำ"
+                    defaultValue="รพ. กรุงเทพ"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
@@ -181,11 +175,13 @@ const WillingForm = () => {
               <textarea
                 placeholder="สิ่งสำคัญที่อยากทำก่อนตาย"
                 rows={4}
+                defaultValue="เดินทางรอบโลก"
                 className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <textarea
                 placeholder="มุมมองต่อความตาย"
                 rows={4}
+                defaultValue="คือส่วนหนึ่งของชีวิต"
                 className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
@@ -287,6 +283,7 @@ const WillingForm = () => {
                 <input
                   type="radio"
                   name="resuscitation"
+                  defaultValue="ต้องการสบายและไม่ทรมาน"
                   className="w-4 h-4 text-blue-600"
                 />
                 <span>ต้องการให้ยื้อชีวิตเต็มที่</span>
@@ -321,6 +318,7 @@ const WillingForm = () => {
             <textarea
               placeholder="ข้อความ/เจตนารมณ์ที่ต้องการให้คนข้างหลังรู้..."
               rows={5}
+              defaultValue="ขอบคุณทุกคนที่เคยอยู่ข้างกัน"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -339,6 +337,7 @@ const WillingForm = () => {
             <textarea
               placeholder="เช่น บริจาคร่างกาย, บริจาคอวัยวะ, ฌาปนกิจ ฯลฯ"
               rows={4}
+              defaultValue="เผารถเบนซ์มาให้ด้วย"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -357,11 +356,13 @@ const WillingForm = () => {
             <input
               type="text"
               placeholder="ชื่อบุคคล / ทีม / ครอบครัว"
+              defaultValue="ให้น้องสาวบอก"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
             <textarea
               placeholder="รายละเอียดวิธีการสื่อสาร..."
               rows={4}
+              defaultValue="บอกตรงๆ"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -417,11 +418,13 @@ const WillingForm = () => {
             <input
               type="text"
               placeholder="ชื่อผู้ตัดสินใจแทน"
+              defaultValue="น้องบี"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
             <textarea
               placeholder="ความสัมพันธ์ / บทบาท / ความไว้วางใจ"
               rows={3}
+              defaultValue="น้องสาว"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -438,6 +441,7 @@ const WillingForm = () => {
             <textarea
               placeholder="สิ่งที่อยากฝากไว้ในฐานะบทส่งท้าย..."
               rows={5}
+              defaultValue="ขอบคุณทุกคนที่เคยอยู่ข้างกัน"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
