@@ -1,11 +1,14 @@
 "use client"
-import Hero from "@/components/Hero/Hero";
-import Timeline from "@/components/Timeline/Timeline";
+import HeroFuneral from "@/components/Hero/Hero";
+import HeroWilling from "@/components/Willing/Willing";
+import HeroFileLife from "@/components/HeroFile/HeroFile";
 
 export default function Home() {
   return (
     <div>
-        <Hero />
+      <HeroFuneral />
+      <HeroWilling />
+      <HeroFileLife />
     </div>
-  );
+  )
 }

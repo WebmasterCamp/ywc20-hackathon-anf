@@ -1,20 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Archive,
-  BookMarked,
-  BookOpen,
-  FileText,
-  Flower,
-  Heart,
-  LifeBuoy,
-  MessageSquare,
-  User,
-  Users
-} from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import { ChevronDown, User, Heart, BookOpen, LifeBuoy, FileText, Flower, MessageSquare, Archive, Users, BookMarked } from 'lucide-react';
+
+interface Step {
+  id: number;
+  title: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  status: 'completed' | 'current' | 'pending';
+}
 
 const WillingForm = () => {
   const router = useRouter();
@@ -25,7 +21,6 @@ const WillingForm = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState<string>("");
 
-  // Mock steps data - replace with your actual content
   const steps: Step[] = [
     { id: 1, title: "ข้อมูลส่วนตัว", icon: User, status: "completed" },
     { id: 2, title: "ค่านิยมและความเชื่อ", icon: Heart, status: "current" },
@@ -44,7 +39,6 @@ const WillingForm = () => {
     { id: 10, title: "บทส่งท้าย", icon: BookMarked, status: "pending" },
   ];
 
-  // Handle scroll to update current step
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("[data-step]");
@@ -81,12 +75,13 @@ const WillingForm = () => {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+  };
 
   const StepContent = ({ step }: { step: Step }) => {
     switch (step.id) {
       case 1:
         return (
-          <div className="space-y-6">
+          <div className="space-y-6" data-step={step.id}>
             <h2 className="text-2xl font-bold text-gray-800">ข้อมูลส่วนตัว</h2>
             <p className="text-gray-600">
               กรุณากรอกข้อมูลส่วนตัวของคุณให้ครบถ้วน
@@ -452,7 +447,7 @@ const WillingForm = () => {
 
       default:
         return (
-          <div className="space-y-6">
+          <div className="space-y-6" data-step={step.id}>
             <h2 className="text-2xl font-bold text-gray-800">{step.title}</h2>
             <p className="text-gray-600">
               เนื้อหาสำหรับขั้นตอนนี้จะถูกเพิ่มเติมในภายหลัง
@@ -480,7 +475,6 @@ const WillingForm = () => {
       </motion.div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-8">
-          {/* Progress Sidebar */}
           <div className="w-80 flex-shrink-0">
             <div className="sticky top-8">
               <div className="space-y-1">
