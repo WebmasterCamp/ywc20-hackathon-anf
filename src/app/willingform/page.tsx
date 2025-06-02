@@ -541,7 +541,7 @@ const WillingForm = () => {
             {/* Action Buttons */}
             <div className="flex justify-end items-center mt-8 p-6 rounded-xl">
               <button className="px-8 py-3 bg-[#00A4BD] text-white rounded-lg hover:bg-teal-600 font-medium transition-colors"
-                onClick={() => router.push("/funeral")}
+                onClick={() => router.push("/")}
               >
                 บันทึกข้อมูล
               </button>
