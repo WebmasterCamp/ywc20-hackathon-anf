@@ -1,14 +1,14 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
 import type React from "react"
 
-const inter = Inter({ subsets: ["latin"] })
-
 export const metadata = {
-  title: "ywc20",
-  description: "Apple-inspired design portfolio",
+  title: "เจตจรรโลง",
+  description: "ลาลับอย่างวางใจ เพราะทุกอย่างวางแผนได้ด้วยตัวคุณ ",
+  icons: {
+    icon: "/image/WhiteLogo.png", // ✅ relative to public/
+  },
 }
 
 export default function RootLayout({
@@ -18,12 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground`}>
-        
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        
+      <body className="min-h-screen bg-background text-foreground">
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
