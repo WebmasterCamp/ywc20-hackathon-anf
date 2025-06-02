@@ -154,7 +154,7 @@ const FuneralForm = () => {
                 `}
               >
                 <img
-                  src="https://source.unsplash.com/300x200/?home-care"
+                  src="/image/gold.png"
                   className="w-full h-24 object-cover rounded mb-3"
                 />
                 <p className="text-center text-gray-600">หีบโลหะหรู</p>
@@ -173,7 +173,7 @@ const FuneralForm = () => {
                 `}
               >
                 <img
-                  src="https://source.unsplash.com/300x200/?hospital"
+                  src="/image/lego.png"
                   className="w-full h-24 object-cover rounded mb-3"
                 />
                 <p className="text-center text-gray-600">หีบเลโก้</p>
