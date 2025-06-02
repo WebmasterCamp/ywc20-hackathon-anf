@@ -14,13 +14,16 @@ import {
   Users
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const WillingForm = () => {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [selected, setSelected] = useState<string>("");
+  const emailRef = useRef<HTMLInputElement>(null);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState<string>("");
 
   // Mock steps data - replace with your actual content
   const steps: Step[] = [
@@ -103,6 +106,27 @@ const WillingForm = () => {
                     placeholder="ชื่อเล่น"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
+                  <input
+                    type="email"
+                    placeholder="อีเมล"
+                    defaultValue={email}
+                    ref={emailRef}
+                    onBlur={() => {
+                      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+                      const inputValue = emailRef.current?.value || "";
+                      if (inputValue && !emailPattern.test(inputValue)) {
+                        setEmailError("กรุณากรอกอีเมลให้ถูกต้อง เช่น ไทย@example.com");
+                      } else {
+                        setEmailError("");
+                      }
+                    }}
+                    className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      emailError ? "border-red-500" : ""
+                    }`}
+                  />
+                  {emailError && (
+                    <p className="text-red-500 text-sm">{emailError}</p>
+                  )}
                   <input
                     type="date"
                     placeholder="วันเกิด"
