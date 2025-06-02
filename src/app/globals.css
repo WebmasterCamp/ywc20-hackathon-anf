@@ -2,12 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+  --foreground: #000000;
+  --main-color-1: #ABE7EF; /* light blue */
+  --main-color-2: #FCF8EC; /* light cream */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-main-1: var(--main-color-1);
+  --color-main-2: var(--main-color-2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +17,30 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --main-color-1: #5a9db8;
+    --main-color-2: #c9c2b0;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('data:image/svg+xml;utf8,<svg width="1512" height="2213" viewBox="0 0 1512 2213" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1512" height="2213" fill="url(%23paint0_radial_80_349)"/><defs><radialGradient id="paint0_radial_80_349" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(756 1106.5) rotate(90) scale(1106.5 756)"><stop stop-color="%23ABE7EF" stop-opacity="0.8"/><stop offset="1" stop-color="%23FCF8EC"/></radialGradient></defs></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* optional, makes background fixed on scroll */
+  font-family: 'FCVision', sans-serif;
+}
+
+@font-face {
+  font-family: 'FCVision';
+  src: url('/fonts/FCVision-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FCVision';
+  src: url('/fonts/FCVision-Light.ttf') format('truetype');
+  font-weight: 300; /* หรือใช้ normal ถ้าไม่แน่ใจ */
+  font-style: normal;
 }
