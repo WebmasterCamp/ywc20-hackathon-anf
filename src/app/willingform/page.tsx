@@ -52,11 +52,10 @@ const WillingForm = () => {
       });
 
       setCurrentStep(current);
-    };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }}, []);
 
   interface Step {
     id: number;
@@ -74,7 +73,6 @@ const WillingForm = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
   };
 
   const StepContent = ({ step }: { step: Step }) => {
