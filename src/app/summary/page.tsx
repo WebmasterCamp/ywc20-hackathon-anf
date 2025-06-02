@@ -10,7 +10,7 @@ export default function SummaryPage() {
   const coffin = "ลายทอง"
   const attire = "ขาว"
 
-  const priceReligion = 5000
+  const priceReligion = 0
   const priceLocation = 12000
   const priceDecoration = 8000
   const priceCoffin = 20000
