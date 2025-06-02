@@ -19,7 +19,7 @@ export default function Footer() {
           ))}
         </nav>
         <p className="mt-6 text-center text-sm leading-5 text-muted-foreground">
-          © 2025 Anne Frank. All rights reserved.
+          © 2025 Jade Jaan Long. All rights reserved.
         </p>
       </div>
     </footer>

@@ -58,10 +58,10 @@ export default function PortfolioGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Blogs</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">บทความ</h2>
+          {/* <p className="mt-4 text-lg text-muted-foreground">
             A showcase of our minimalist designs and creative solutions.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Removed category filter buttons */}
