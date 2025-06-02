@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function HeroFuneral() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 p-28 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <motion.div
           className="mx-auto mt-16 lg:mt-0"
           initial={{ opacity: 0, x: 20 }}
