@@ -1,8 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useRouter } from "next/navigation";
 
 export default function SummaryPage() {
+  const router = useRouter();
   // Mock data
   const religion = "พุทธ"
   const location = "วัดพระแก้ว"
@@ -71,6 +73,7 @@ export default function SummaryPage() {
         >
         <button
           className="px-6 py-3 bg-[#34bee0] text-white hover:bg-primary-dark transition-colors border border-gray-300 rounded-lg shadow-sm"
+          onClick={() => router.push('/')}
         >
           ไว้วางใจให้เราดูแล
         </button>

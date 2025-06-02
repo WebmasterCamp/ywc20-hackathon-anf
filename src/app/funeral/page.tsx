@@ -87,11 +87,6 @@ const FuneralForm = () => {
                 />
                 <span>ไม่อิงตามศาสนา</span>
               </label>
-              {/* <textarea
-              placeholder="รายละเอียดเพิ่มเติม..."
-              rows={3}
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-            /> */}
             </div>
           </div>
         );
