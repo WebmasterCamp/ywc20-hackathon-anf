@@ -27,19 +27,33 @@ export default function Header() {
         </div>
         <div className="flex gap-x-12">
           <Link
-            href="/blogs"
+            href="/funeral"
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
 
           >
-            บทความ
+            ออกแบบพิธีศพ
           </Link>
           <Link 
-            href="/aboutus"
+            href="/willingform"
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
           >
-            เกี่ยวกับเรา
+            วางแผนเจตนา
+          </Link>
+          <Link 
+            href="/มาแก้ด้วยนะพิม"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+          >
+            ส่งมอบเอกสาร
+          </Link>
+          <Link 
+            href="/blogs"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+          >
+            บทความ
           </Link>
         </div>
         <div className="flex flex-1 justify-end">

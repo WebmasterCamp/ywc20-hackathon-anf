@@ -64,15 +64,20 @@ export default function SummaryPage() {
 
 </div>
     <motion.div
-        className="mt-8 flex justify-center border border-gray-300 rounded-lg p-1 bg-white shadow-sm"
+        className="mt-8 flex justify-end gap-5 p-1"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
         >
         <button
-            className="px-6 py-3 bg-primary text-black hover:bg-primary-dark transition-colors"
+          className="px-6 py-3 bg-[#34bee0] text-white hover:bg-primary-dark transition-colors border border-gray-300 rounded-lg shadow-sm"
         >
-            บันทึกข้อมูล
+          ไว้วางใจให้เราดูแล
+        </button>
+        <button
+          className="px-6 py-3 text-black bg-white hover:bg-primary-dark transition-colors border border-gray-300 rounded-lg shadow-sm"
+        >
+          แชร์
         </button>
     </motion.div>
 
